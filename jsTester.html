@@ -2,16 +2,17 @@
 <head>
 <script language = "JavaScript">
 
-var number = 0; // GLOBAL variable available anywhere in our script
-var myList = [ "Anne", "Bob", "Cathy", "Doug" ];    
+var number = 0; // GLOBAL variable - available anywhere in our script
+var myList = [ "Anne", "Bob", "Cathy", "Doug" ];   
+    
 function tester()
 {
   /*
-    var answer; // Declare a new variable called answer
-	answer = confirm("Hello world"); // true or false is stored in answer var
+    // var answer - Declare a new variable called answer
+	var answer = confirm("Hello world"); // true or false is stored in answer var
     
     answer = prompt ("What's your name");// string literal is between open / close quote marks
-    alert("Welcome to my site, "+answer);
+    alert("Welcome to my site, " + answer);
     
     
     // = is ASSIGNMENt operator (right side is assigned to the left side
@@ -20,10 +21,9 @@ function tester()
     
     if( number == 0 )
     {
-        alert("Blastoff");
-        number = 11;
+        alert("Blastoff!");
+        number = 10;
     }
-    //number = 12;
    else
    {
     alert(number);
@@ -32,7 +32,7 @@ function tester()
 */       
     alert (myList[number]);
     number = number + 1;
-    if (number == 4 ) // Does number equal 4??
+    if (number > 3 ) 
     {
         number = 0
     }
