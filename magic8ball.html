@@ -1,0 +1,84 @@
+<html>
+<head>
+<script languague = "JavaScript">
+
+var answers = [ "As I see it, yes.", "Ask again later.", "Better not tell you now.", "Absolutely not.", "Concentrate and ask again.", "Don't count on it.", "It is certain.", "It is decidedly so.", "Most likely.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Signs point to yes.", "Very doubtful.", "Without a doubt.", "Yes-definitely.", "Yes, definitely, absolutely!" ];
+function random()
+{
+    var rand = -1;
+    var solution = document.getElementById("answer");
+    var userQ = document.getElementById("question");
+   
+    rand = Math.random()*answers.length;
+    rand = Math.floor(rand);
+        
+    if( userQ.value.length == 0) // user hasn't asked question yet
+    {
+        solution.value = "Please ask a question first!"
+    }    
+    else
+    {
+        solution.value = answers[rand];
+        if( rand == 16 )
+        {
+            document.getElementById("player").play();
+        }    
+    }   
+    
+}  
+function reset()
+{
+    //delete the contents of the answer textbox:
+    document.getElementById("answer").value = "";
+    
+}    
+    
+    //rand = Math.random();//returns a random decimal between 0 (inclusive) and 1 (exclusive)
+    //rand = rand * 10; // 0 to 9
+    //rand = rand + 1; // 1 to 10 
+    //rand = rand * 21; // 0 to 20, 21 because must include 0
+    //rand = rand - 10; // -10 to 10 
+    //rand = Math.floor(rand) 
+	//alert(rand);
+    
+    //create a random number between 0-5 (inclusive)
+    //multiply Math.random() by the NUMBER OF OPTIONS
+    //rand = Math.random() * 6;
+    //rand = Math.floor(rand); going to nearest integer that is less than value 1.9999 would go to 1, truncates it, without rand = the value is not stored, with rand + 1 integer now goes up one
+    //when box is clicked = infocus
+    //readonly = cant write in box   
+
+</script>
+</head>
+    
+
+<body background="images/greywall.jpg" link="lightpink" vlink="lightpink">
+<font color="white">    
+<center>
+    
+<h1>Magic 8 Ball</h1>
+<br/>
+
+<img src="images/crystalball.jpg" width="250">   
+<br/>
+
+<h3> Type whatever question your heart desires into the first box (preferably a YES or NO question). Click the button below when you are ready, and your answer will appear in the second box.
+</h3>
+    
+<input type = “text” size=”80” id = "question" onfocusin = "reset()" /> 
+<br/>
+<br/>
+    
+<input type="button" value="Click here" onClick="random()"/>
+<br/>
+<br/>
+    
+<input type = "text" size="80" id = "answer" readonly = true />  
+    
+<audio src="images/sounds.applause" id="player"> </audio>    
+    
+</center>
+</font>    
+</body>
+    
+</html>
