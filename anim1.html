@@ -1,0 +1,51 @@
+<html>
+<head>
+<script language="javaScript">
+    
+function beginAnim()
+{
+    var myDude = document.getElementById("dude");
+    var xPos = myDude.style.left;
+    xPos = parseInt(xPos);
+    xPos -=5; //guy moves 5 px to the left
+    
+    if( xPos<0 ) //if dude is off the screen
+    {
+        xPos = 900; //starts back at original position
+    }
+    
+    myDude.style.left = xPos; 
+    var timer = setTimeout("beginAnim()", 30); //timer that runs this function every 30 milliseconds
+    
+}
+    //divs used to control where images/text can appear on the screen
+    //can hide and show a div
+    
+</script>
+</head>
+<body bgcolor = "#E09976">
+<center>
+<h1>My Animation</h1>
+<input type = "button" value = "Start" onClick="beginAnim()"/>
+</center>
+<div id="setting" style="position:absolute; top:125; left:100"> 
+<img src="images/anim1bkgnd.jpg" width="800"/>
+</div>
+<div id="dude" style="position:absolute; top:350; left:900">
+<img src="images/walking1.gif" width = "150"/>
+</div>
+<div id="setting" style="position:absolute; top:125; left:0"> 
+<img src="images/curtain.jpg" width="150" height="500"/> 
+</div>  
+    
+<div id="setting" style="position:absolute; top:125; left:900"> 
+<img src="images/curtain.jpg" width="150" height="500"/> 
+</div>  
+
+    
+<center>   
+<a href="index.html"> Click here to return to my homepage.</a>   
+</center>   
+    
+</body>
+</html>
