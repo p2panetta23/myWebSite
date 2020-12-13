@@ -8,7 +8,7 @@ var autoClicked = false;//bouling situation (true v. false)
 function addOne()
 {
 	//incremenent number variable and alert it
-    number = number + 1; //or number++ also increases variable by 1
+    number = number + 1; //or number++ also increases variable by 1 or number+=1
     
     if(number == 16)
     {
@@ -18,7 +18,7 @@ function addOne()
     flipLEDs(); //stops addOne function and runs flipLEDs, then continues addOne function
     if( autoClicked == true )
     {
-        var time = setTimeout("addOne()", 600);
+        var time = setTimeout("addOne()", 600); //requires two parameters: the function we want to call and the delay (in millis) before the call is made
     }  
     
     //code that will display number in textbox
