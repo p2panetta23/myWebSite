@@ -1,0 +1,79 @@
+<html>
+<head>
+<script language="JavaScript">
+
+var favFoods = ["pasta", "gnocchi", "strawberries", "bananas", "grapes", "croissants", "popcorn", "ice cream", "smoked salmon", "bagels"];
+var counter = 85;
+function start()
+{
+	//var tbox = document.getElementById("display");
+    
+    //tbox.value = favFoods[counter]; // write code that will output the first element of favFoods in textbox or replace counter with 0
+	// tbox.value = "hello";
+   // counter = counter + 1;//or counter+=1 or counter++ increment counter by 1
+    
+   // var x = tbox.value; //store current value of textbox in a variable x
+    
+   
+ //   if(counter < 10)
+ //   {
+ //   var timer = setTimeout("start()", 1000); //calls function every 1000 milliseconds
+ //   }
+ //   else
+ //   {
+ //      tbox.value = "";
+ //   }
+    //use WHILE loops for an indefinite number of times, better to use when you don't know how many times something is going to happen
+//    while(counter < 10) //condition must be boolean (true/false)
+//    {
+//          alert(favFoods[counter]);
+//          counter++ 
+//    }
+   //use a FOR loop for a determined number of times
+    //nice because all elements are right on one line)
+   
+    //for and while loops are interchangeable, but one is always better (depending on the situation)
+    //for (identify iterator; identify when it stops; incrementation)
+    
+ /*  for( var i = 0 ; i < 10 ; i++ )
+    {
+       alert(favFoods[i]);
+    }
+    
+    alert("What is i?" +i);
+  */
+    //var i is set to 0 in for loops because first element of array is 0)
+    
+    //ELEMENTS OF A LOOP:
+    //The first element is a variable set to a starting point. This determines what the variable (usually i) starts as in the loop. The second element is a condition. This prevents the loop from being indefinite and controls it. The third element is a change to that variable. This determines how much i changes each time the loop runs. 
+    if( counter < 60)
+    {
+        alert("F");
+    }
+    else if ( counter > 70)
+    {
+        alert("C");
+    }
+    else if ( counter > 80)
+    {
+        alert("B"):
+    }
+    
+    
+    
+    //an ELSE IF statement comes after an IF statement and can add as many as needed; gives another option besides just IF and ELSE. for example, IF grade = 9, ELSE IF grade = 10, ELSE IF grade = 11, ELSE grade = 12
+    
+    //if you have a series of IF statements and an ELSE statement at the end, the ELSE statement would only be attached to the IF statement directly above it
+}
+
+</script>
+</head>
+<body>
+<center>
+<h1>Loop Test</h1>
+<input type="button" value="Click me" onClick="start()"/>
+<br/><br/>
+<input id="display" type="text" size="75"/>
+
+<body>
+</html>

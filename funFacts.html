@@ -1,0 +1,89 @@
+<html> 
+<head> 
+<script language="JavaScript">
+
+/*************** Algorithm ******************
+
+1. Assign each element in the group array as an option on the drop down list of the table. 
+
+2. Use the getIndex function to search the group array for the element and return the index number for that element that was chosen (if valid selection).
+
+3. If a valid selection was chosen, the corresponding element in the facts list will display in the funFact textbox. 
+
+4. If it was not a valid selection, alert invalid selection. 
+
+*/
+
+
+var group = ["-- Choose a Food --", "kiwi", "bananas", "cheese", "nutella", "cardamom", "chocolate", "watermelon", "grapes"];
+
+var facts = ["-- No food selected --", "can help you fall asleep", "are classified as berries", "is the most stolen food", "uses 25% of the worlds hazelnuts", "can help fight cancer", "can help you study", "is both a fruit and a vegetable", "explode in the microwave"]; 
+
+function loadData() //taking array and adding it to drop down list for the select object
+{
+	for(var i = 0; i<group.length; i++)
+    {
+        var daList = document.getElementById("prez");
+  		var option = document.createElement("option");
+  		option.text = group[i];
+  		daList.add(option);
+    }
+}
+
+// This function identifies which element from the 
+    //drop down has been selected. It calls the getIndex function to acquire what the index of the selected item. Then it displays the corresponding element in the facts list. (This is diplayed in the textbox on the web page.)
+    
+function start()
+{
+	var foods = document.getElementById("prez");
+    var daIndex = getIndex(foods.value); //get index of whatever they selected
+   if( daIndex > -1) //valid selection was chosen
+   {    
+    document.getElementById("funFact").value = facts[daIndex];
+   }    
+   else
+   {
+       alert("invalid selection");
+   }
+}
+
+// This function searches the group array for the element passed as a parameter and returns the index number for that element in the array, linear search
+function getIndex(d) // d is a (local) variable
+{
+   var answer = -1; //-1 is invalid index for an array so it can discover error. 
+   for( var i = 0; i < group.length; i++ )
+   {
+       if( group[i] == d )//tests if i equals the parameter
+       {
+           answer = i;
+       }    
+   }    
+   return answer;
+}
+
+
+
+</script>
+</head>
+<body onload="loadData()" bgcolor="darkblue" link="yellow" vlink="yellow"> 
+<font color="white">    
+<center>
+<h1>Food Fun Facts</h1>   
+<img src="images/food.jpg" width="250">   
+
+<br/><br/>
+<table border = 3>
+	<tr>
+		<td>  	<select name="p1" id="prez"></select>	</td>
+		<td>	<input id="funFact" type="text" size="40"/> </td>
+	</tr>
+</table>
+<br/><br/>
+<input type="button" value="click" onclick="start()"/>
+    <p> <a href="index.html"> Click here to return to my homepage.</a>
+</p> 
+</center>
+
+</font>
+</body>
+</html>
