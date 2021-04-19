@@ -1,0 +1,102 @@
+<html>
+<head> 
+<script language="JavaScript">
+    
+var years = ["Select a Year!", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"];
+
+var winners = ["", "Parasite", "Green Book", "The Shape of Water", "Moonlight", "Spotlight", "Birdman", "12 Years a Slave", "Argo", "The Artist", "The King's Speech", "The Hurt Locker", "Slumdog Millionaire", "No Country for Old Men", "The Departed", "Crash", "Million Dollar Baby", "The Lord of the Rings: The Return of the King", "Chicago", "A Beautiful Mind", "Gladiator", "American Beauty" ]; 
+ 
+var images = ["images/award.jpg","images/parasite.jpg", "images/greenbook.jpg", "images/shapeofwater.jpg", "images/moonlight.jpg", "images/spotlight.jpg", "images/birdman.jpg", "images/12yearsaslave.jpg", "images/argo.jpg", "images/theartist.jpg", "images/thekingsspeech.jpg", "images/thehurtlocker.jpg", "images/slumdogmillionaire.jpg", "images/nocountryforoldmen.jpg", "images/thedeparted.jpg", "images/crash.jpg", "images/milliondollarbaby.jpg", "images/lordoftherings.jpg", "images/chicago.jpg", "images/abeautifulmind.jpg", "images/gladiator.jpg", "images/americanbeauty.jpg" ];
+
+var sources = ["", "https://www.hulu.com/movie/parasite-2fd691a0-f66b-467f-8635-00d7f151f3d4?entity_id=2fd691a0-f66b-467f-8635-00d7f151f3d4", "www.amazon.com/gp/video/detail/amzn1.dv.gti.66b38541-76e5-ada4-6294-f63d00f23ce1?autoplay=1&ref_=atv_cf_strg_wb", "www.hulu.com/movie/the-shape-of-water-cbf0aba3-ab8f-4fc7-a595-3bb44cc2f6bb?entity_id=cbf0aba3-ab8f-4fc7-a595-3bb44cc2f6bb", "www.netflix.com/watch/80121348?source=35", "https://www.netflix.com/watch/80061341?source=35", "www.amazon.com/gp/video/detail/amzn1.dv.gti.7ea9f709-eb5e-88dd-9f85-548419343f91?autoplay=1&ref_=atv_cf_strg_wb", "www.hulu.com/movie/12-years-a-slave-f6a4c981-745e-48ef-aaa0-c857c187ce93?entity_id=f6a4c981-745e-48ef-aaa0-c857c187ce93", "www.hulu.com/movie/argo-0d661353-7c9c-44d7-8d9b-a37d7988a088?entity_id=0d661353-7c9c-44d7-8d9b-a37d7988a088", "www.netflix.com/watch/70189319?source=35", "www.amazon.com/gp/video/detail/amzn1.dv.gti.d2a9f702-c94d-101a-4edf-34e5881e75de?autoplay=1&ref_=atv_cf_strg_wb", "www.amazon.com/gp/video/detail/amzn1.dv.gti.8ab80bb3-badb-8e3c-af8f-8b3ccf2a9427?autoplay=1&ref_=atv_cf_strg_wb", "www.amazon.com/gp/video/detail/amzn1.dv.gti.bea9f74a-58fe-9921-3f22-f0a13b1f2cc6?autoplay=1&ref_=atv_cf_strg_wb", "www.hulu.com/movie/no-country-for-old-men-5c0d8ed0-e42f-4ab6-90e1-065b4a6658a6?entity_id=5c0d8ed0-e42f-4ab6-90e1-065b4a6658a6", "www.netflix.com/watch/70044689?source=35", "www.hulu.com/movie/crash-98c10dfe-4fcf-4086-a873-45b8fec4a915?entity_id=98c10dfe-4fcf-4086-a873-45b8fec4a915", "www.amazon.com/gp/video/detail/amzn1.dv.gti.26a9f738-929f-2a31-57f9-0f7a9723d11f?autoplay=1&ref_=atv_cf_strg_wb", "www.amazon.com/gp/video/detail/amzn1.dv.gti.46a9f72d-bdca-4d8b-f07f-07cb50b29b35?autoplay=1&ref_=atv_cf_strg_wb", "www.hulu.com/movie/chicago-cb5cb04a-23a0-458a-bd45-dd524c84940b?entity_id=cb5cb04a-23a0-458a-bd45-dd524c84940b", "www.amazon.com/gp/video/detail/amzn1.dv.gti.92a9f7c4-681c-4519-f9b8-f8e325ae46e0?autoplay=1&ref_=atv_cf_strg_wb", "www.amazon.com/gp/video/detail/amzn1.dv.gti.e6bbb2ac-4c7f-2436-933d-c6708f74fc8e?autoplay=1&ref_=atv_cf_strg_wb", "www.hulu.com/movie/american-beauty-963fbd10-7055-4ba0-8a91-adabd122c1d5?entity_id=963fbd10-7055-4ba0-8a91-adabd122c1d5"]
+    
+function dropList() 
+{
+   	for(var i = 0; i < years.length; i++)
+    {
+        var list = document.getElementById("drop");
+  		var option = document.createElement("option");
+  		option.text = years[i];
+  		list.add(option);
+    }
+}    
+    
+    
+function display()
+{
+   var movies = document.getElementById("drop");
+   var theIndex = acquire(movies.value); 
+   if( theIndex > 0) 
+   {    
+    document.getElementById("Movie").value = winners[theIndex];
+    var img2 = document.getElementById("picFrame");
+    img2.src = images[theIndex];  
+    var cite = document.getElementById("cite");
+    cite.value = sources[theIndex];   
+   } 
+   else 
+   {
+       alert("Invalid selection, please choose a valid year!");
+   }
+ 
+  
+}
+    
+function acquire(f) 
+{
+   for( var i = 0; i < 22 ; i++ )
+   {
+       if( years[i] == f )
+       {
+           var userAnswer = i;
+       }
+
+   } 
+   if (years[userAnswer] == f)
+   {
+       return userAnswer;
+   }
+   else 
+   {
+       userAnswer = -1;
+       return userAnswer;
+   }
+    
+}
+    
+</script>    
+</head>    
+<body onload="dropList()" bgcolor="black" link="white" vlink="white"> 
+<font color="gold">    
+<center>
+
+<h1>Academy Award Winners of the 2000s</h1>   
+<img id="picFrame" src="images/award.jpg" width="225"/>
+
+<br/>
+    <p>
+        Please choose a year from 2000-2020 below and click the button!
+    </p>
+ 
+    
+<table border = 3>
+	<tr>
+		<td>  	<select name="p1" id="drop"></select>	</td>
+		<td>	<input id="Movie" type="text" size="40"/> </td>
+	</tr>
+</table>
+    
+<br/>
+    
+<input type="button" value="Find Winner" onclick="display()"/>
+    <br/>
+ <p>
+     Link to Watch Movie:
+    </p>
+    <input type = "text" size="30" id = "cite"/>      
+    
+    
+</center>    
+</font>
+</body>    
+</html>
